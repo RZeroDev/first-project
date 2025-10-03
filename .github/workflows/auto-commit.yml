@@ -1,0 +1,55 @@
+name: Auto Commit Bot
+
+on:
+  schedule:
+    - cron: "*/1 * * * *"   # toutes les 30 minutes
+  workflow_dispatch:          # permet aussi de lancer manuellement
+
+jobs:
+  auto-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Git
+        run: |
+          git config --global user.name "RzeroDev"
+          git config --global user.email "rzerodeviam@gmail.com"
+
+      - name: Run auto commit script
+        run: |
+          FILES=("index.html" "style.css" "script.js" "app.ts" "index.php")
+          DEFAULT_LINE="Ajout de contenu automatique"
+
+          for FILE in "${FILES[@]}"; do
+              if [ ! -f "$FILE" ]; then
+                  echo "$DEFAULT_LINE" > "$FILE"
+                  echo "Créé $FILE"
+              else
+                  echo "$DEFAULT_LINE" >> "$FILE"
+                  echo "Ajouté une ligne à $FILE"
+              fi
+          done
+
+          git add .
+          if git diff --cached --quiet; then
+            echo "Aucun changement à commit"
+            exit 0
+          fi
+
+          git commit -m "Auto commit: $(date)"
+          git push
+
+      - name: Send Discord notification
+        run: |
+          LAST_COMMIT=$(git rev-parse --short HEAD)
+          NUM_FILES=$(git diff-tree --no-commit-id --name-only -r HEAD | wc -l)
+          COMMIT_URL="https://github.com/RzeroDev/first-project/commit/$LAST_COMMIT"
+          COMMIT_MSG="✅ Nouveau commit automatique : [$LAST_COMMIT]($COMMIT_URL) | Fichiers modifiés : $NUM_FILES"
+
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d "{\"content\": \"$COMMIT_MSG\"}" \
+               ${{ secrets.DISCORD_WEBHOOK }}
