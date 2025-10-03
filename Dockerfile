@@ -16,7 +16,7 @@ COPY auto_commit.sh /app/auto_commit.sh
 RUN chmod +x /app/auto_commit.sh
 
 # Ajouter la tâche cron (toutes les 30 minutes ici)
-RUN echo "*/30 * * * * /app/auto_commit.sh >> /var/log/cron.log 2>&1" > /etc/cron.d/autocommit
+RUN echo "*/1 * * * * /app/auto_commit.sh >> /var/log/cron.log 2>&1" > /etc/cron.d/autocommit
 
 # Appliquer les permissions et activer cron
 RUN chmod 0644 /etc/cron.d/autocommit && \
