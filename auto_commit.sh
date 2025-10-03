@@ -21,20 +21,26 @@ for FILE in "${FILES[@]}"; do
     fi
 done
 
-# Ajouter tous les fichiers du projet au commit
+# Ajouter tous les fichiers du projet
 git add .
+
+# Vérifier si des changements sont prêts à committer
+if git diff --cached --quiet; then
+    echo "$(date): Aucun changement à committer"
+    exit 0
+fi
 
 # Commit avec date
 git commit -m "Auto commit: $(date)"
 
-# --- Pull/rebase pour éviter les conflits ---
+# Pull/rebase pour éviter les conflits
 git pull --rebase origin main
 
 # Push vers GitHub
 git push origin main
 
 # --- Notification Discord ---
-WEBHOOK_URL="https://discordapp.com/api/webhooks/1423508911402516492/Ya1KbW9u9WrTyMUsgoP4Y_erecGlpa8m7DpOHEkuDQOBsjlmvl0BXpAWU8x2fV8AeBoY"
+WEBHOOK_URL="https://discord.com/api/webhooks/1423508911402516492/Ya1KbW9u9WrTyMUsgoP4Y_erecGlpa8m7DpOHEkuDQOBsjlmvl0BXpAWU8x2fV8AeBoY"
 LAST_COMMIT=$(git rev-parse --short HEAD)
 NUM_FILES=$(git diff-tree --no-commit-id --name-only -r HEAD | wc -l)
 COMMIT_URL="https://github.com/RzeroDev/First-projects/commit/$LAST_COMMIT"
