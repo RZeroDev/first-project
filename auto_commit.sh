@@ -34,7 +34,7 @@ fi
 git commit -m "Auto commit: $(date)"
 
 # Pull/rebase pour éviter les conflits
-git pull --rebase origin main
+git pull --rebase origin main 
 
 # Push vers GitHub
 git push origin main
