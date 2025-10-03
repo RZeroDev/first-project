@@ -1770,3 +1770,17 @@ Ajouté une ligne à style.css
 Ajouté une ligne à script.js
 Ajouté une ligne à app.ts
 Ajouté une ligne à index.php
+[main 8b89ed9] Auto commit: ven. 03 oct. 2025 23:00:01 WAT
+ 6 files changed, 19 insertions(+)
+error: impossible de tirer avec un rebasage : vous avez des modifications non indexées.
+error: Veuillez les valider ou les remiser.
+To https://github.com/RZeroDev/first-project.git
+   df59df5..8b89ed9  main -> main
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   140    0     0  100   140      0    101  0:00:01  0:00:01 --:--:--   101100   140    0     0  100   140      0     58  0:00:02  0:00:02 --:--:--    58100   140    0     0  100   140      0     41  0:00:03  0:00:03 --:--:--    41100   140    0     0  100   140      0     31  0:00:04  0:00:04 --:--:--    31100   140    0     0  100   140      0     26  0:00:05  0:00:05 --:--:--    27100   140    0     0  100   140      0     22  0:00:06  0:00:06 --:--:--     0100   140    0     0  100   140      0     22  0:00:06  0:00:06 --:--:--     0
+Ajouté une ligne à index.html
+Ajouté une ligne à style.css
+Ajouté une ligne à script.js
+Ajouté une ligne à app.ts
+Ajouté une ligne à index.php
