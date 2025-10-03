@@ -29,3 +29,8 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
 100   141    0     0  100   141      0    184 --:--:-- --:--:-- --:--:--   184
+Ajouté une ligne à index.html
+Ajouté une ligne à style.css
+Ajouté une ligne à script.js
+Ajouté une ligne à app.ts
+Ajouté une ligne à index.php
