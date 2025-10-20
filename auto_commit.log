@@ -8824,3 +8824,16 @@ Ajouté une ligne à style.css
 Ajouté une ligne à script.js
 Ajouté une ligne à app.ts
 Ajouté une ligne à index.php
+[main 3f532a9] Auto commit: lun. 20 oct. 2025 02:00:01 WAT
+ 6 files changed, 18 insertions(+)
+error: impossible de tirer avec un rebasage : vous avez des modifications non indexées.
+error: Veuillez les valider ou les remiser.
+fatal: impossible d'accéder à 'https://github.com/RZeroDev/first-project.git/' : Could not resolve host: github.com
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0curl: (6) Could not resolve host: discord.com
+Ajouté une ligne à index.html
+Ajouté une ligne à style.css
+Ajouté une ligne à script.js
+Ajouté une ligne à app.ts
+Ajouté une ligne à index.php
