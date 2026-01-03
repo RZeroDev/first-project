@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Récupérer toute l'historique pour éviter les conflits
 
       - name: Setup Git
         run: |
@@ -20,6 +22,18 @@ jobs:
 
       - name: Run auto commit script
         run: |
+          # IMPORTANT: Synchroniser AVANT de modifier les fichiers
+          git fetch origin
+          git pull --rebase origin main || {
+            echo "Erreur lors du pull, tentative de récupération..."
+            git rebase --abort 2>/dev/null || true
+            git reset --hard origin/main 2>/dev/null || true
+            git pull --rebase origin main || {
+              echo "Échec du pull, abandon de cette exécution"
+              exit 1
+            }
+          }
+          
           FILES=("index.html" "style.css" "script.js" "app.ts" "index.php")
           DEFAULT_LINE="Ajout de contenu automatique"
 
@@ -40,7 +54,27 @@ jobs:
           fi
 
           git commit -m "Auto commit: $(date)"
-          git push
+          
+          # Push avec retry en cas d'échec
+          PUSH_ATTEMPTS=0
+          MAX_PUSH_ATTEMPTS=3
+          while [ $PUSH_ATTEMPTS -lt $MAX_PUSH_ATTEMPTS ]; do
+              if git push origin main; then
+                  echo "Push réussi"
+                  break
+              else
+                  PUSH_ATTEMPTS=$((PUSH_ATTEMPTS + 1))
+                  echo "Échec du push (tentative $PUSH_ATTEMPTS/$MAX_PUSH_ATTEMPTS), pull et retry..."
+                  git pull --rebase origin main || {
+                      echo "Échec du pull lors du retry"
+                      exit 1
+                  }
+                  if [ $PUSH_ATTEMPTS -eq $MAX_PUSH_ATTEMPTS ]; then
+                      echo "Échec du push après $MAX_PUSH_ATTEMPTS tentatives"
+                      exit 1
+                  fi
+              fi
+          done
 
       - name: Send Discord notification
         run: |
