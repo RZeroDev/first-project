@@ -11505,3 +11505,7 @@ error: impossible de verrouiller le fichier de configuration /home/rzerodev/.git
 Depuis https://github.com/RZeroDev/first-project
  * branch            main       -> FETCH_HEAD
 Mon Jan  5 15:30:06 WAT 2026: Modifications non commitées détectées, stash...
+error: impossible de verrouiller le fichier de configuration /home/rzerodev/.gitconfig: Le fichier existe
+Depuis https://github.com/RZeroDev/first-project
+ * branch            main       -> FETCH_HEAD
+Mon Jan  5 16:00:03 WAT 2026: Modifications non commitées détectées, stash...
