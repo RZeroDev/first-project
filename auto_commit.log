@@ -11477,6 +11477,7 @@ Ajouté une ligne à index.php
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 Depuis https://github.com/RZeroDev/first-project
  * branch            main       -> FETCH_HEAD
 Sun Jan  4 00:00:02 WAT 2026: Modifications non commitées détectées, stash...
@@ -11534,10 +11535,13 @@ Tue Jan  6 10:00:02 WAT 2026: Modifications non commitées détectées, stash...
 Depuis https://github.com/RZeroDev/first-project
  * branch            main       -> FETCH_HEAD
 Tue Jan  6 10:30:03 WAT 2026: Modifications non commitées détectées, stash...
+=======
+>>>>>>> Stashed changes
 error: impossible de verrouiller le fichier de configuration /home/rzerodev/.gitconfig: Le fichier existe
 error: impossible de verrouiller le fichier de configuration /home/rzerodev/.gitconfig: Le fichier existe
 Depuis https://github.com/RZeroDev/first-project
  * branch            main       -> FETCH_HEAD
+<<<<<<< Updated upstream
 Tue Jan  6 11:00:02 WAT 2026: Modifications non commitées détectées, stash...
 Depuis https://github.com/RZeroDev/first-project
  * branch            main       -> FETCH_HEAD
@@ -11753,3 +11757,6 @@ error: impossible de verrouiller le fichier de configuration /home/rzerodev/.git
 Depuis https://github.com/RZeroDev/first-project
  * branch            main       -> FETCH_HEAD
 Sun Jan 11 01:00:02 WAT 2026: Modifications non commitées détectées, stash...
+=======
+Sun Jan 11 02:00:02 WAT 2026: Modifications non commitées détectées, stash...
+>>>>>>> Stashed changes
