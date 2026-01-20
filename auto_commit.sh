@@ -1,7 +1,7 @@
 #!/bin/bash
 # Script auto-commit qui crée des fichiers si inexistants et push automatiquement
 
-cd /home/rzerodev/Documents/projets/first-project || exit
+cd /var/www/first-project || exit
 
 # Charger les variables d'environnement
 export $(grep -v '^#' .env | xargs)
