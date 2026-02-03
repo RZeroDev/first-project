@@ -15139,3 +15139,7 @@ error: could not lock config file /root/.gitconfig: File exists
 From https://github.com/RZeroDev/first-project
  * branch            main       -> FETCH_HEAD
 Tue Feb  3 16:00:02 UTC 2026: Modifications non commitées détectées, stash...
+error: could not lock config file /root/.gitconfig: File exists
+From https://github.com/RZeroDev/first-project
+ * branch            main       -> FETCH_HEAD
+Tue Feb  3 16:20:02 UTC 2026: Modifications non commitées détectées, stash...
